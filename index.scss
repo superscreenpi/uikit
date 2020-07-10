@@ -1,0 +1,195 @@
+$elevations: (
+        '00dp': 0.00,
+        '01dp': 0.05,
+        '02dp': 0.07,
+        '03dp': 0.08,
+        '04dp': 0.09,
+        '06dp': 0.11,
+        '08dp': 0.12,
+        '12dp': 0.14,
+        '16dp': 0.15,
+        '24dp': 0.16,
+);
+
+// CSS RESET
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+// Theming
+@mixin colors($background, $foreground, $primary) {
+  --background: #{$background};
+  --foreground: #{$foreground};
+  --primary: #{$primary};
+
+  @each $dp, $op in $elevations {
+    --color-#{$dp}: #{rgba($foreground, $op)};
+  }
+}
+
+body {
+  @include colors(rgb(35, 35, 35), rgb(255, 255, 255), rgb(0, 166, 255));
+
+  &.light-theme {
+    @include colors(rgb(240, 252, 255), rgb(0, 18, 50), rgb(0, 94, 255));
+  }
+
+  background-color: var(--background);
+}
+
+@each $dp, $op in $elevations {
+  .has-background-#{$dp} {
+    background-color: var(--color-#{$dp});
+  }
+}
+
+* {
+  color: var(--foreground);
+}
+
+@each $dp, $op in $elevations {
+  .has-background-#{$dp} {
+    background-color: var(--color-#{$dp});
+  }
+}
+
+// TYPOGRAPHY
+h1 {
+  font-size: 32px;
+  line-height: 2.1;
+}
+
+h2 {
+  font-size: 25px;
+  line-height: 1.8;
+}
+
+p, a, button {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+a:not(.button), button.link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button:not(.link), a.button {
+  display: inline-block;
+  background-color: var(--primary);
+  text-decoration: none;
+  color: white;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: var(--primary) 1px solid;
+  margin: 3px 0;
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--primary);
+  }
+}
+
+hr {
+  border-color: var(--primary);
+  border-width: 0.5px;
+}
+
+// COMPONENTS
+.container {
+  padding: 12px;
+  max-width: 600px;
+  width: 100%;
+  margin: 12px auto;
+}
+
+.box {
+  @extend .has-background-06dp;
+  border-radius: 3px;
+
+  & > .content {
+    padding: 12px;
+  }
+
+  & > .option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 0;
+    margin: 0 12px;
+
+    &:not(:last-child) {
+      border-bottom: var(--color-08dp) 1px solid;
+    }
+
+    label {
+      i {
+        width: 32px;
+      }
+
+      flex-grow: 1;
+    }
+
+    input, select, .input {
+      @extend .has-background-06dp;
+      outline: none;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 3px;
+    }
+  }
+}
+
+input[type=checkbox] {
+  display: none;
+
+  & + span.checkbox {
+    width: 48px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: var(--background);
+    position: relative;
+    display: flex;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      display: block;
+      top: 3px;
+      left: 3px;
+      position: absolute;
+      background-color: var(--foreground);
+      transition-property: left;
+      transition-duration: 0.3s;
+    }
+  }
+
+  &:checked + span.checkbox {
+    background-color: var(--primary);
+
+    &:before {
+      left: 27px;
+    }
+  }
+}
