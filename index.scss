@@ -20,10 +20,11 @@ $elevations: (
 }
 
 // Theming
-@mixin colors($background, $foreground, $primary) {
+@mixin colors($background, $foreground, $primary, $accent) {
   --background: #{$background};
   --foreground: #{$foreground};
   --primary: #{$primary};
+  --accent: #{$accent};
 
   @each $dp, $op in $elevations {
     --color-#{$dp}: #{rgba($foreground, $op)};
@@ -35,10 +36,10 @@ $elevations: (
 }
 
 body {
-  @include colors(rgb(35, 35, 35), rgb(255, 255, 255), rgb(0, 166, 255));
+  @include colors(rgb(35, 35, 35), rgb(255, 255, 255), rgb(0, 166, 255), rgb(255, 36, 136));
 
   &.light-theme {
-    @include colors(rgb(240, 252, 255), rgb(0, 18, 50), rgb(0, 94, 255));
+    @include colors(rgb(240, 252, 255), rgb(0, 18, 50), rgb(0, 94, 255), rgb(255, 36, 136));
   }
 
   background-color: var(--background);
