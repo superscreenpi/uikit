@@ -238,24 +238,31 @@ input[type=checkbox] {
     flex-shrink: 0;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 
     .box {
       padding: 12px;
+      overflow-y: auto;
+      max-height: 30vh;
 
-      label {
+      &:not(:first-child) {
+        margin-left: 24px;
+      }
+
+      & > label {
         display: block;
         font-size: 22px;
         padding-bottom: 12px;
       }
 
-      input {
+      & > input {
         display: block;
         width: 100%;
         background-color: var(--background);
         font-size: 22px;
+        border: none;
       }
     }
   }
