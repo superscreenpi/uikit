@@ -363,3 +363,55 @@ input[type="checkbox"] {
   height: 100vh;
   overflow: hidden;
 }
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: -12px;
+
+  & > .card {
+    width: 100%;
+    margin: 12px;
+    --radius: 12px;
+    border-radius: var(--radius);
+    background-color: var(--color-02dp);
+    flex-basis: 400px;
+    flex-grow: 1;
+
+    & > * {
+      overflow: hidden;
+    }
+
+    & > :first-child {
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+    }
+
+    & > :last-child {
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+    }
+
+    .card-header-image {
+      height: 300px;
+      max-height: 40vh;
+      overflow: hidden;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .card-content {
+      padding: 24px;
+    }
+
+    .card-header {
+      padding: 12px 24px 0 24px;
+
+      & > * {
+        margin: 0;
+      }
+    }
+  }
+}
