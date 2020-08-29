@@ -11,7 +11,7 @@
     "build:storybook": "build-storybook --output-dir docs",
     "build:components": "tsc",
     "build:css": "node-sass --output dist --output-style compressed src/index.scss",
-    "lint": "eslint src stories --ext .js,.ts,.tsx --max-warnings 0",
+    "lint": "eslint src --ext .js,.ts,.tsx --max-warnings 0",
     "clean": "yarn lint --fix"
   },
   "files": [

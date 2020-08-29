@@ -4,9 +4,13 @@ import { Link } from '../src';
 export default {
   title: 'UIKit/Link',
   component: Link,
-  argTypes: {
-    onClick: {},
-  },
+  decorators: [
+    (Story) => (
+      <div className="story-centered">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 const Template = (args) => {

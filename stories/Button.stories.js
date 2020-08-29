@@ -4,9 +4,14 @@ import { Button } from '../src';
 export default {
   title: 'UIKit/Button',
   component: Button,
-  argTypes: {
-    onClick: {},
-  },
+  argTypes: {},
+  decorators: [
+    (Story) => (
+      <div className="story-centered">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 const Template = (args) => {
