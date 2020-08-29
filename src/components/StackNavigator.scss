@@ -1,7 +1,7 @@
 .stack-navigator {
   width: 100vw;
   @extend .full-height;
-  position: relative;
+  position: fixed;
   overflow: hidden;
   background-color: black;
 
@@ -13,8 +13,10 @@
     background-color: var(--background);
     box-shadow: rgba(0, 0, 0, 0.6) 0 0 12px;
     transition-duration: 0.3s;
-    transition-property: left, right, top, filter, transform;
+    transition-property: left, right, top, filter;
     top: 0;
+    display: flex;
+    flex-direction: column;
 
     &:not(:last-child) {
       // this screen is in-memory but stacked
@@ -27,8 +29,10 @@
     &:last-child {
       &:not(:first-child) {
         // this is the currently active screen
-        top: 5vh;
-        border-radius: 24px;
+        margin-top: 5vh;
+        height: calc(var(--vh, 1vh) * 95);
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
       }
 
       &:first-child {
@@ -75,15 +79,17 @@
             top: 100vh;
           }
           100% {
-            top: 5vh;
+            top: 0;
           }
         }
       }
     }
 
 
-    header {
+    & > header {
       padding: 12px;
+      flex-grow: 0;
+      flex-shrink: 0;
 
       .back.link {
         float: right;
@@ -94,6 +100,13 @@
       h2 {
         margin-top: 0;
       }
+    }
+
+    & > .content {
+      overflow: hidden;
+      overflow-y: auto;
+      flex-grow: 1;
+      flex-shrink: 1;
     }
 
     // REMOVE ME

@@ -28,16 +28,16 @@ function Screen({
   return (
     <div
       className={`screen ${className} ${disableAnimation ? '' : 'animated'} ${animationDirection}`}
-      style={{ marginTop: onBack ? swipeBack : 0 }}
+      style={{ transform: onBack ? `translate(0px, ${swipeBack}px)` : '' }}
     >
       <header
         onTouchStart={(e) => {
           setTouch(e.touches[0]);
         }}
         onTouchMove={(e) => {
-          setSwipeBack(e.touches[0].screenY - touch.screenY);
+          setSwipeBack(Math.max(e.touches[0].clientY - touch.clientY, 0));
         }}
-        onTouchEnd={() => {
+        onTouchEnd={(e) => {
           if (onBack && swipeBack > window.innerHeight / 4) {
             onBack();
           }
@@ -52,7 +52,9 @@ function Screen({
         )}
         <h2>{title || name}</h2>
       </header>
-      <Component />
+      <div className="content">
+        <Component />
+      </div>
     </div>
   );
 }

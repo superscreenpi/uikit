@@ -78,9 +78,119 @@ const Page3 = () => {
 };
 const Page4 = () => {
   return (
-    <p>
-      This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
-    </p>
+    <div style={{ height: '100%', overflowY: 'auto' }}>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+      <p>
+        This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
+      </p>
+    </div>
   );
 };
 
