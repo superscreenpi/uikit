@@ -6,7 +6,7 @@
   "author": "Thomas Biesaart <thomas.biesaart@protonmail.com>",
   "license": "MIT",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 3000",
     "start": "yarn storybook",
     "build-storybook": "build-storybook",
     "lint": "eslint src stories --ext .js,.ts,.tsx --max-warnings 0",
