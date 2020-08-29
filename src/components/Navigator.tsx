@@ -7,6 +7,9 @@ export interface ScreenProps {
   title?: string;
   className?: string;
   onBack?: () => void;
+  component: React.ComponentType;
+  disableAnimation?: boolean;
+  animationDirection?: 'left' | 'right' | 'up';
 }
 
 export interface Stack {
@@ -20,9 +23,17 @@ export function createStackNavigator(): Stack {
     Navigator: ({ children }) => {
       return <div className="navigator">{children}</div>;
     },
-    Screen: ({ children, name, title, className, onBack }) => {
+    Screen: ({
+      name,
+      title,
+      className,
+      onBack,
+      disableAnimation,
+      animationDirection = 'left',
+      component: Component,
+    }) => {
       return (
-        <div className={`screen ${className}`}>
+        <div className={`screen ${className} ${disableAnimation ? '' : 'animated'} ${animationDirection}`}>
           <header>
             {onBack && (
               <button className="back link" onClick={onBack}>
@@ -31,7 +42,7 @@ export function createStackNavigator(): Stack {
             )}
             <h2>{title}</h2>
           </header>
-          {children}
+          <Component />
         </div>
       );
     },
