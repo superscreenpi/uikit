@@ -13,6 +13,11 @@
     transition-duration: 0.2s;
     transition-property: left, top, right, transform, filter, z-index;
     background-color: var(--background);
+    box-shadow: rgba(0, 0, 0, 0.8) 0 0 24px;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition-duration: 0s;
+    }
 
     p {
       padding: 12px;
@@ -21,6 +26,7 @@
     // Hidden screen
     filter: none;
     z-index: 900;
+    border-radius: 12px;
 
     header {
       padding: 12px;
@@ -41,11 +47,11 @@
       right: 0;
       top: 5vh;
       z-index: 100;
-      box-shadow: black 0 0 30px;
       filter: none;
 
       // Root of the stack (only 1 screen on stack)
       &:last-child {
+        border-radius: 0;
         top: 0;
       }
     }
@@ -53,8 +59,7 @@
     // An idle screen on the stack
     &.stacked {
       transform: scale(0.95);
-      filter: blur(10px);
-      border-radius: 12px;
+      filter: blur(12px);
       z-index: 1;
     }
 
