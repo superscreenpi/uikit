@@ -1,0 +1,104 @@
+.stack-navigator {
+  width: 100vw;
+  @extend .full-height;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+
+
+  .screen {
+    width: 100vw;
+    @extend .full-height;
+    position: absolute;
+    background-color: var(--background);
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 12px;
+    transition-duration: 0.2s;
+    transition-property: left, right, top, filter, transform;
+    top: 0;
+
+    &:not(:last-child) {
+      // this screen is in-memory but stacked
+      transform: scale(0.95);
+      filter: blur(12px);
+      pointer-events: none;
+      touch-action: none;
+    }
+
+    &:last-child {
+      &:not(:first-child) {
+        // this is the currently active screen
+        top: 5vh;
+        border-radius: 24px;
+      }
+
+      &:first-child {
+        // if there is only one element, it is full-screen
+        top: 0;
+      }
+    }
+
+    &:not(:first-child) {
+      &.animated.right {
+        animation-duration: 0.2s;
+        animation-name: slide-to-right;
+
+        @keyframes slide-to-right {
+          0% {
+            right: 100vw;
+          }
+          100% {
+            right: 0;
+          }
+        }
+      }
+
+      &.animated.left {
+        animation-duration: 0.2s;
+        animation-name: slide-to-left;
+
+        @keyframes slide-to-left {
+          0% {
+            left: 100vw;
+          }
+          100% {
+            left: 0;
+          }
+        }
+      }
+
+      &.animated.up {
+        animation-duration: 0.2s;
+        animation-name: slide-from-bottom;
+
+        @keyframes slide-from-bottom {
+          0% {
+            top: 100vh;
+          }
+          100% {
+            top: 5vh;
+          }
+        }
+      }
+    }
+
+
+    header {
+      padding: 12px;
+
+      .back.link {
+        float: right;
+        font-weight: bold;
+        font-size: 1.3rem;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+
+    // REMOVE ME
+    p {
+      padding: 12px;
+    }
+  }
+}
