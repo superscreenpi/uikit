@@ -1,7 +1,7 @@
 {
   "name": "@superscreenpi/uikit",
   "version": "2.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "git@github.com:superscreenpi/uikit",
   "author": "Thomas Biesaart <thomas.biesaart@protonmail.com>",
   "license": "MIT",
