@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "rules": {
+    "@typescript-eslint/no-parameter-properties": 0,
+    "@typescript-eslint/ban-ts-ignore": 0
+  }
+}

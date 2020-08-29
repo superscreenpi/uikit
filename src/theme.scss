@@ -1,0 +1,63 @@
+$elevations: (
+        "00dp": 0,
+        "01dp": 0.05,
+        "02dp": 0.07,
+        "03dp": 0.08,
+        "04dp": 0.09,
+        "06dp": 0.11,
+        "08dp": 0.12,
+        "12dp": 0.14,
+        "16dp": 0.15,
+        "24dp": 0.16,
+        "soft": 0.87,
+        "disabled": 0.38,
+);
+
+@mixin colors($background, $foreground, $primary, $accent) {
+  --background: #{$background};
+  --foreground: #{$foreground};
+  --primary: #{$primary};
+  --accent: #{$accent};
+
+  @each $dp, $op in $elevations {
+    --color-#{$dp}: #{rgba($foreground, $op)};
+  }
+
+  .dimmer {
+    background-color: rgba($background, 0.9);
+  }
+}
+
+body {
+  @media (prefers-color-scheme: light) {
+    @include colors(
+                    rgb(240, 252, 255),
+                    rgb(0, 18, 50),
+                    rgb(0, 94, 255),
+                    rgb(255, 36, 136)
+    );
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include colors(
+                    rgb(18, 18, 18),
+                    rgb(255, 255, 255),
+                    rgb(0, 166, 255),
+                    rgb(255, 36, 136)
+    );
+  }
+}
+
+body {
+  background-color: var(--background);
+}
+
+* {
+  color: var(--foreground);
+}
+
+@each $dp, $op in $elevations {
+  .has-background-#{$dp} {
+    background-color: var(--color-#{$dp});
+  }
+}
