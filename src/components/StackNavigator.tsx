@@ -38,7 +38,7 @@ function Screen({
           setSwipeBack(e.touches[0].screenY - touch.screenY);
         }}
         onTouchEnd={() => {
-          if (onBack && swipeBack > window.innerHeight / 2) {
+          if (onBack && swipeBack > window.innerHeight / 4) {
             onBack();
           }
           setTouch(undefined);

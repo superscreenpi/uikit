@@ -5,6 +5,12 @@
   font-family: sans-serif;
 }
 
+html,
+body {
+  position: fixed;
+  width: 100%;
+}
+
 
 :root {
   --vh: 1vh;
