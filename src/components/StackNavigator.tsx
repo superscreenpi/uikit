@@ -19,12 +19,32 @@ function Screen({
   onBack,
   backTitle,
   disableAnimation,
-  animationDirection = 'right',
+  animationDirection = 'up',
   component: Component,
 }: PropsWithChildren<ScreenProps>) {
+  const [touch, setTouch] = useState<React.Touch>();
+  const [swipeBack, setSwipeBack] = useState(0);
+
   return (
-    <div className={`screen ${className} ${disableAnimation ? '' : 'animated'} ${animationDirection}`}>
-      <header>
+    <div
+      className={`screen ${className} ${disableAnimation ? '' : 'animated'} ${animationDirection}`}
+      style={{ marginTop: onBack ? swipeBack : 0 }}
+    >
+      <header
+        onTouchStart={(e) => {
+          setTouch(e.touches[0]);
+        }}
+        onTouchMove={(e) => {
+          setSwipeBack(e.touches[0].screenY - touch.screenY);
+        }}
+        onTouchEnd={() => {
+          if (onBack && swipeBack > window.innerHeight / 2) {
+            onBack();
+          }
+          setTouch(undefined);
+          setSwipeBack(0);
+        }}
+      >
         {onBack && (
           <button className="back link" onClick={onBack}>
             ‹ {backTitle}
@@ -76,7 +96,7 @@ export function StackNavigator({ screens, options = {} }: PropsWithChildren<Stac
             backOptions.onBack = goBack;
             backOptions.backTitle = stack[i - 1].title || stack[i - 1].name;
           }
-          return <Screen key={screen.name} {...backOptions} {...options} {...screen} />;
+          return <Screen key={i} {...backOptions} {...options} {...screen} />;
         })}
       </NavigatorContext>
     </div>

@@ -48,13 +48,6 @@ const Page2 = () => {
       <p>
         <button
           onClick={() => {
-            nav.navigate('screen-two');
-          }}
-        >
-          Open Screen Two
-        </button>
-        <button
-          onClick={() => {
             nav.navigate('screen-three');
           }}
         >
@@ -72,20 +65,6 @@ const Page3 = () => {
         This page has a lot of content so we can show how scrolling interacts. We should be weary of strange behaviors.
       </p>
       <p>
-        <button
-          onClick={() => {
-            nav.navigate('screen-two');
-          }}
-        >
-          Open Screen Two
-        </button>
-        <button
-          onClick={() => {
-            nav.navigate('screen-three');
-          }}
-        >
-          Open Screen Three
-        </button>
         <button
           onClick={() => {
             nav.navigate('screen-four');
