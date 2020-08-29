@@ -8,9 +8,3 @@
 :root {
   --vh: 1vh;
 }
-
-// this helper allows containers to be 100% viewport height ignoring any borders and chromes
-.full-height {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-}

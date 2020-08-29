@@ -45,12 +45,12 @@ function Screen({
           setSwipeBack(0);
         }}
       >
+        <h2>{title || name}</h2>
         {onBack && (
           <button className="back link" onClick={onBack}>
             ‹ {backTitle}
           </button>
         )}
-        <h2>{title || name}</h2>
       </header>
       <div className="content">
         <Component />

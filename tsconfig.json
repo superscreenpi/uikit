@@ -1,6 +1,17 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "jsx": "react"
+    "jsx": "react",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "target": "ES5",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "module": "ES2015",
+    "lib": [
+      "dom"
+    ]
   }
 }
