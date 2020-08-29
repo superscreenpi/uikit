@@ -1,0 +1,35 @@
+// href
+a:not(.button),
+button.link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// button
+button:not(.link),
+a.button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--color-24dp);
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0 24px;
+  cursor: pointer;
+  border: none;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 12px;
+  margin: 3px 0;
+  text-transform: uppercase;
+  outline: none;
+}

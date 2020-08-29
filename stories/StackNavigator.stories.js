@@ -3,7 +3,6 @@ import { StackNavigator, useNavigator } from '../src';
 
 export default {
   title: 'UIKit/StackNavigator',
-  component: Screen,
   argTypes: {
     animationDirection: {
       control: {
@@ -225,8 +224,8 @@ const Template = (args) => {
   );
 };
 
-export const FullScreen = Template.bind({});
-FullScreen.args = {
+export const Default = Template.bind({});
+Default.args = {
   animationDirection: 'up',
   backTitle: '',
 };
